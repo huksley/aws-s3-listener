@@ -1,0 +1,51 @@
+service: aws-s3-listener
+
+provider:
+  name: aws
+  runtime: nodejs8.10
+  region: eu-west-1
+  stage: dev
+  # optional, in MB, default is 1024, min is 128
+  memorySize: 128
+  # optional, in seconds, default is 6
+  timeout: 30
+  # optional, default is true
+  versionFunctions: false
+  iamRoleStatements:
+    - Effect: "Allow"
+      Action:
+        - "s3:*"
+      Resource:
+        Fn::Join:
+          - ""
+          - - "arn:aws:s3:::"
+            - ${env:IMAGE_BUCKET, 'sample-bucket'}
+    - Effect: "Allow"
+      Action:
+        - "s3:*"
+      Resource:
+        Fn::Join:
+          - ""
+          - - "arn:aws:s3:::"
+            - ${env:IMAGE_BUCKET, 'sample-bucket'}
+            - "/*"
+
+plugins:
+  - serverless-plugin-typescript
+  - serverless-plugin-existing-s3
+
+package:
+  exclude:
+    - "node_modules/aws-sdk/**"
+    - "node_modules/aws-lambda/**"
+
+functions:
+  handleS3:
+    handler: src/s3-listener.s3Handler
+    events:
+      - existingS3:
+          bucket: ${env:IMAGE_BUCKET, 'sample-bucket'}
+          events:
+            - s3:ObjectCreated:*
+          rules:
+            - prefix: profile/
