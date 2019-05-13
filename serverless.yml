@@ -29,6 +29,9 @@ provider:
           - - "arn:aws:s3:::"
             - ${env:IMAGE_BUCKET, 'sample-bucket'}
             - "/*"
+    - Effect: "Allow"
+      Action: "states:StartExecution"
+      Resource: ${env:WORKFLOW_ARN, ''}
 
 plugins:
   - serverless-plugin-typescript
