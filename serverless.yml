@@ -11,6 +11,8 @@ provider:
   timeout: 30
   # optional, default is true
   versionFunctions: false
+  environment:
+    WORKFLOW_ARN: ${env:WORKFLOW_ARN}
   iamRoleStatements:
     - Effect: "Allow"
       Action:
@@ -52,3 +54,25 @@ functions:
             - s3:ObjectCreated:*
           rules:
             - prefix: profile/
+            - suffix: .jpg
+      - existingS3:
+          bucket: ${env:IMAGE_BUCKET, 'sample-bucket'}
+          events:
+            - s3:ObjectCreated:*
+          rules:
+            - prefix: profile/
+            - suffix: .jpeg
+      - existingS3:
+          bucket: ${env:IMAGE_BUCKET, 'sample-bucket'}
+          events:
+            - s3:ObjectCreated:*
+          rules:
+            - prefix: profile/
+            - suffix: .png
+      - existingS3:
+          bucket: ${env:IMAGE_BUCKET, 'sample-bucket'}
+          events:
+            - s3:ObjectCreated:*
+          rules:
+            - prefix: profile/
+            - suffix: .webp
