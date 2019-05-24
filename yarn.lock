@@ -3241,10 +3241,10 @@ serverless-api-stage@^1.4.0:
   dependencies:
     lodash "^4.17.10"
 
-serverless-plugin-existing-s3@^2.3.3:
-  version "2.3.3"
-  resolved "https://registry.yarnpkg.com/serverless-plugin-existing-s3/-/serverless-plugin-existing-s3-2.3.3.tgz#07c3ec2f34b51bcc0bf770323f91ea430ce4f554"
-  integrity sha512-bjSdFjx2KwVT5Bws1rxWSGtXP16xxleqzIuSI7gPRs3ZQA62eLSxDYv+FEcKnjA8s/WSDR3jngyJQqVxBiDtxg==
+serverless-plugin-existing-s3@^2.4.0:
+  version "2.4.0"
+  resolved "https://registry.yarnpkg.com/serverless-plugin-existing-s3/-/serverless-plugin-existing-s3-2.4.0.tgz#3dcbfb1d10cdd52dfd51ef06cd0f0810457d00a8"
+  integrity sha512-BsOSOM5X4hFmX2U7WlUWvMooTega4fKGc547OiWTUwHtB/H1nBs5bQJxM4jHJLIODEoVLw8J8O90rlif/yHwuQ==
 
 serverless-plugin-typescript@^1.1.7:
   version "1.1.7"

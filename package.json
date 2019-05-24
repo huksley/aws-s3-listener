@@ -39,7 +39,7 @@
     "pretty-quick": "^1.10.0",
     "serverless": "^1.41.1",
     "serverless-api-stage": "^1.4.0",
-    "serverless-plugin-existing-s3": "^2.3.3",
+    "serverless-plugin-existing-s3": "^2.4.0",
     "serverless-plugin-typescript": "^1.1.7",
     "shx": "^0.3.2",
     "ts-node": "^8.1.0",
