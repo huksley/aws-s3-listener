@@ -30,7 +30,7 @@
     "@types/node": "^11.13.5",
     "@types/node-fetch": "^2.3.3",
     "@types/ramda": "^0.26.8",
-    "@types/sharp": "^0.22.1",
+    "@types/sharp": "^0.22.2",
     "form-data": "^2.3.3",
     "husky": "^2.2.0",
     "mocha": "^6.1.4",
