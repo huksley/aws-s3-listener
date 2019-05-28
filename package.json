@@ -34,7 +34,7 @@
     "form-data": "^2.3.3",
     "husky": "^2.3.0",
     "mocha": "^6.1.4",
-    "nodemon": "^1.18.11",
+    "nodemon": "^1.19.1",
     "prettier": "^1.17.0",
     "pretty-quick": "^1.11.0",
     "serverless": "^1.41.1",
